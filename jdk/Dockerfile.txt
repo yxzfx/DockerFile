@@ -4,11 +4,10 @@ FROM centos:centos7
 #维护者信息
 MAINTAINER yongxuezhen
 
-#下载jdk并解压
+#下载jdk
+ yum install java-1.8.0-openjdk.x86_64
 
-ENV VERSION 1.8.0_161
-ENV JAVA_HOME=/usr
 
 RUN yum update -y && cd /data/softs && yum install -y java
 
-CMD ["java", "-version"]
+CMD ["/bin/bash"]
